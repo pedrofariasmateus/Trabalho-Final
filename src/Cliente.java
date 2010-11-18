@@ -21,9 +21,12 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(String e,long ap){
+	public Cliente(String n,String a,long p,String e,long ap){
 		this.email=e;
 		this.altphone=ap;
+		this.phone=p;
+		this.address=a;
+		this.name=n;
 	}
 	
 	public String getName(){
