@@ -1,86 +1,52 @@
+import java.util.ArrayList;
 
-public class Cliente {
-	String name;
-	String address;
-	long phone;
-	String email;
-	long altphone;
+public class Cliente extends ArrayList {
+	String name, address, phone, email, altphone;
 	
-	public Cliente(){
-		name="";
-		address="";
-		phone=0;
-		email="";
-		altphone=0;
+	ConvertString s1=new ConvertString();
+	ConvertString s2=new ConvertString();
+	
+	public Cliente(String n, String a, String p, String e, String ap){
+		
+		this.name=n;
+		this.add(s1.Converter(name));
+		
+		this.address=a;
+		this.add(s2.Converter(address));
+		
+		
+		this.phone=p;
+		this.add(phone);
+		
+		this.email=e;
+		this.add(email);
+		
+		this.altphone=ap;
+		this.add(altphone);
 	}
 	
-	public Cliente(String n,String a,long p){
-		this.name=n;
-		this.address=a;
-		this.phone=p;
+	ArrayList<Object> getClient(){
+		return this;
 		
 	}
 	
-	public Cliente(String n,String a,long p,String e,long ap){
-		this.email=e;
-		this.altphone=ap;
-		this.phone=p;
-		this.address=a;
-		this.name=n;
+	
+	void add(int position, String s){
+		
+		/*Colocar a posição.
+		0 - nome, 1 - address, 2 - phone, 3 - email, 4 - altphone*/
+		this.remove(position);
+		this.add(s);
+		
 	}
 	
-	public String getName(){
-		return name;
-	}
-	
-	public void setName(String n){
-		name=n;
-	}
-	
-	public String getAddress(){
-		return address;
-	}
-	
-	public void setAddress(String a){
-		address=a;
-	}
-	
-	public long getPhone(){
-		return phone;
-	}
-	
-	public void setPhone(long p){
-		phone=p;
-	}
-	
-	public String getEmail(){
-		return email;
-	}
-	
-	public void setEmail(String e){
-		email=e;
-	}
-	
-	public long getAltPhone(){
-		return altphone;
-	}
-	
-	public void setAltPhone(long ap){
-		altphone=ap;
-	}
 	
 	public String toString(){
-		return "Nome Cliente: "+name+"; "+"Morada: "+address+"; "+"Telefone: "+phone+"; ";
-	}
-	
-	public String compString(){
-		return "Informação Complementar E-mail: "+email+"; "+"Contacto Alternativo: "+altphone+"; ";
-	}
-	
-	public static void main(String [] args){
-		
-		Cliente c = new Cliente("marlene","r.dinis",1224343123);
-		System.out.println(c.toString());
-		System.out.println(c.compString());
+		String toPrint= "Nome Cliente: "+name+"; "+"Morada: "+address+"; "+"Telefone: "+phone+"; ";
+		if(email!=null)
+			toPrint=toPrint+ "E-mail: "+ email + "; ";
+		if(altphone!=null)
+			toPrint=toPrint+ "Telefone Alternativo" + altphone + "; ";
+		return toPrint;
 	}
 }
