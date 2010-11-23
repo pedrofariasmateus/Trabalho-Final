@@ -55,43 +55,8 @@ public class Sistema {
 		
 	}
 	
-	public void modify(Cliente c){
-		String n,m,e;
-		String p,ap;
-		
-		System.out.println("Qual o atributo que deseja alterar?");
-			atribute=s.next();
-			
-		if((atribute.equals("Nome"))||atribute.equals("nome")){
-			System.out.println("Insira o novo nome:");
-			n=s.nextLine();
-			c.setName(n);
-			
-		}
-		if((atribute.equals("Morada"))||atribute.equals("morada")){
-			System.out.println("Insira a nova morada");
-			m=s.nextLine();
-			c.setAddress(m);
-			
-		}
-		if((atribute.equals("Telefone"))||(atribute.equals("telefone"))){
-			System.out.println("Insira um novo número de telefone:");
-			p=s.nextLine();
-			c.setMainPhone(p);
-			
-		}
-		if((atribute.equals("Telefone Alternativo"))||(atribute.equals("telefone alternativo"))){
-			System.out.println("Insira um novo número de telefone alternativo:");
-			ap=s.nextLine();
-			c.modEmail(ap,c.email.get(0));
-			
-		}
-		if((atribute.equals("Email"))||(atribute.equals("email"))||(atribute.equals("E-mail"))||(atribute.equals("e-mail"))){
-			System.out.println("Insira um novo e-mail:");
-			e=s.nextLine();
-			//c.add(4,e);
-			
-		}
+	public void modify(){
+		d.modify(toSearch, type, old, nova);
 	}
 	
 	public void search(){

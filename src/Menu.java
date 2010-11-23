@@ -37,7 +37,7 @@ public class Menu {
 	}
 	
 	public void modifyMenu(){
-		//sis.modify();
+		sis.modify();
 	}
 	
 	public void searchMenu(){
