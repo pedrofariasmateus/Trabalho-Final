@@ -2,9 +2,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class ConvertString {
-	ArrayList<String> inp=new ArrayList<String>();
 	
-	public ArrayList<String> Converter(String input){
+	
+	public static ArrayList<String> Converter(String input){
+		
+		ArrayList<String> inp=new ArrayList<String>();
 		//vai separar cada pedaço do array assim que encontrar um espaço.
 		//isto é indicado pelo valor entre os \\s*.
 		Scanner a = new Scanner(input).useDelimiter("\\s* \\s*");
@@ -17,4 +19,5 @@ public class ConvertString {
 		//retorna a arraylist com cada valor individual
 		return inp;
 	}
+	
 }

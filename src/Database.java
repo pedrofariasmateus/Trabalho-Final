@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Database {
 	ArrayList<Cliente> data;
@@ -20,7 +21,7 @@ public class Database {
 		return toRet;
 	}
 
-
+	
 	void modify(Cliente oldStr, Cliente newStr) {
 
 	}
