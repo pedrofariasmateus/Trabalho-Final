@@ -37,7 +37,7 @@ public class testModify extends TestCase{
 			velha.add(i, ccheck.email.get(i));
 		
 		
-		x.modify("João Aiveca", "name", "B@hotmail.com", "B@hotmail.com");
+		x.modify("João Aiveca", "name", "B@hotmail.com", "jkeg@hotmail.com");
 		
 		Cliente ccheck2=x.search("joaiveca@hotmail.com", "email").get(0);
 		ArrayList<String> nova = ccheck2.getEmail();
