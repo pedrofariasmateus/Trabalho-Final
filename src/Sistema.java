@@ -11,6 +11,7 @@ public class Sistema {
 		String p;
 		String e;
 		String ap;
+		int info=0;
 		Cliente client;
 		
 		System.out.println("Por favor insira um nome:");
@@ -20,6 +21,22 @@ public class Sistema {
 		System.out.println("Por favor insira um número de telefone:");
 		p=s.next();
 	
+		do{
+			System.out.println("Deseja inserir um e-mail e um número de telefone alternativo?");
+			System.out.println("Sim - 1; Não - 0");
+			
+			if(s.hasNextInt()){
+				
+			info = s.nextInt();
+			
+			}
+			else{ s.next();
+			}
+			
+		}while(info!=0&&info!=1);
+		
+		if(info ==1){
+		
 		System.out.println("Por favor insira um e-mail:");
 		e=s.next();
 		System.out.println("Por favor insira um telefone alternativo:");
@@ -27,12 +44,15 @@ public class Sistema {
 		
 		client = new Cliente(n,m,p,e,ap);
 		d.add(client);
+		}
+		else{
+			client = new Cliente(n,m,p);
+			d.add(client);
+		}
 		
 		return client;
 		
 	}
-
-
 	
 	public void modify(Cliente c){
 		String n,m,e;

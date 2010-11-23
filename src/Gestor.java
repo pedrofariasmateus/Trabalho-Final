@@ -8,10 +8,9 @@ public class Gestor {
 		Sistema sis = new Sistema();
 		Database d = new Database();
 		
-		m.mainMenu();
-		//Cliente c = d.getCliente();
-		//c.toString();
-		
+		sis.insert().toString();
+		Cliente c = d.getCliente(0);
+		String cli = c.toString();
 		
 		
 		

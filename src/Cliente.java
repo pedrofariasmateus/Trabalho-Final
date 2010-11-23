@@ -25,6 +25,20 @@ public class Cliente extends ArrayList {
 		this.add(altphone);
 	}
 	
+	public Cliente(String n, String a, String p){
+
+		this.name=n;
+		this.add(s1.Converter(name));
+		
+		this.address=a;
+		this.add(s2.Converter(address));
+		
+		
+		this.phone=p;
+		this.add(phone);
+	}
+	
+	
 	ArrayList<Object> getClient(){
 		return this;
 		
