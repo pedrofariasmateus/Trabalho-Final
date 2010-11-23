@@ -20,18 +20,6 @@ public class Database {
 		return toRet;
 	}
 
-	Cliente searchByName(String nome) {
-		for(int i=0; i<data.size()-1; i++){
-			//Cliente retirado da BD a comparar
-			Cliente temp=data.get(i);
-			ArrayList<String> nameTemp=(ArrayList<String>) temp.get(0);
-			
-			
-			
-		}
-			
-		
-	}
 
 	void modify(Cliente oldStr, Cliente newStr) {
 

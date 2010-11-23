@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Cliente {
+	
 	String name, address, phone, email, altphone;
 	
 	ConvertString s1=new ConvertString();
@@ -40,4 +41,5 @@ public class Cliente {
 			toPrint=toPrint+ "Telefone Alternativo" + altphone + "; ";
 		return toPrint;
 	}
+	
 }
