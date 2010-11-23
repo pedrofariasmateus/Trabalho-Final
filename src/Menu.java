@@ -27,7 +27,7 @@ public class Menu {
 		case 0: return;
 		case 1: insertMenu();
 		case 2: modifyMenu();
-		//case 3: searchMenu();
+		case 3: searchMenu();
 		
 		}
 	}

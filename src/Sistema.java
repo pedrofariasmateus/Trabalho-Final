@@ -21,6 +21,8 @@ public class Sistema {
 		System.out.println("Por favor insira um número de telefone:");
 		p=s.nextLine();
 	
+		client = new Cliente(n,m,p);
+		
 		do{
 			System.out.println("Deseja inserir um e-mail e um número de telefone alternativo?");
 			System.out.println("Sim - 1; Não - 0");
@@ -43,12 +45,8 @@ public class Sistema {
 		System.out.println("Por favor insira um telefone alternativo:");
 		ap=s.next();
 		
-		client = new Cliente(n,m,p,e,ap);
-		d.add(client);
-		}
-		else{
-			client = new Cliente(n,m,p);
-			d.add(client);
+		client.email.add(e);
+		client.phones.add(ap);
 		}
 		
 		return client;
@@ -65,25 +63,25 @@ public class Sistema {
 		if((atribute.equals("Nome"))||atribute.equals("nome")){
 			System.out.println("Insira o novo nome:");
 			n=s.nextLine();
-			//c.add(0,n);
+			c.setName(n);
 			
 		}
 		if((atribute.equals("Morada"))||atribute.equals("morada")){
 			System.out.println("Insira a nova morada");
 			m=s.nextLine();
-			//c.add(1,m);
+			c.setAddress(m);
 			
 		}
 		if((atribute.equals("Telefone"))||(atribute.equals("telefone"))){
 			System.out.println("Insira um novo número de telefone:");
 			p=s.nextLine();
-			//c.add(2,p);
+			c.setMainPhone(p);
 			
 		}
 		if((atribute.equals("Telefone Alternativo"))||(atribute.equals("telefone alternativo"))){
 			System.out.println("Insira um novo número de telefone alternativo:");
 			ap=s.nextLine();
-			//c.add(3,ap);
+			c.modEmail(ap,c.email.get(0));
 			
 		}
 		if((atribute.equals("Email"))||(atribute.equals("email"))||(atribute.equals("E-mail"))||(atribute.equals("e-mail"))){
@@ -96,10 +94,13 @@ public class Sistema {
 	
 	public void search(){
 		
-		System.out.println("Pesquisar: ");
-	
-		String search = s.nextLine();
-		d.searchByName(search);
+		System.out.println("Pesquisar Por: ");
+		String searchby = s.next();
+		
+		System.out.println("Pesquisar:");
+		String search = s.next();
+		d.search(search,searchby);
+		
 	}
 
 }

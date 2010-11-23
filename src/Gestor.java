@@ -3,13 +3,21 @@ import java.util.*;
 public class Gestor {
 	
 	public static void main(String args []){
-		
+		boolean exit = false;
 		Menu m = new Menu();
 		Sistema sis = new Sistema();
 		Database d = sis.d;
+		do{
+			m.mainMenu();
+			if(m.option==0){
+				exit=true;
+			}
+		}while(exit!=true);
+			
 		
 		
-		m.mainMenu();
+		
+		
 		//Cliente c = sis.d.getCliente(0);
 		//String cli = c.toString();
 		
