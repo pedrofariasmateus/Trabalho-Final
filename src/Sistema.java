@@ -15,12 +15,14 @@ public class Sistema {
 		Cliente client;
 		
 		System.out.println("Por favor insira um nome:");
-		n=s.next();
+		n=s.nextLine();
 		System.out.println("Por favor insira uma morada:");
-		m=s.next();
+		m=s.nextLine();
 		System.out.println("Por favor insira um número de telefone:");
-		p=s.next();
+		p=s.nextLine();
 	
+		client = new Cliente(n,m,p);
+		
 		do{
 			System.out.println("Deseja inserir um e-mail e um número de telefone alternativo?");
 			System.out.println("Sim - 1; Não - 0");
@@ -39,15 +41,12 @@ public class Sistema {
 		
 		System.out.println("Por favor insira um e-mail:");
 		e=s.next();
+		
 		System.out.println("Por favor insira um telefone alternativo:");
 		ap=s.next();
 		
-		client = new Cliente(n,m,p,e,ap);
-		d.add(client);
-		}
-		else{
-			client = new Cliente(n,m,p);
-			d.add(client);
+		client.email.add(e);
+		client.phones.add(ap);
 		}
 		
 		return client;
@@ -63,42 +62,45 @@ public class Sistema {
 			
 		if((atribute.equals("Nome"))||atribute.equals("nome")){
 			System.out.println("Insira o novo nome:");
-			n=s.next();
-			c.add(0,n);
+			n=s.nextLine();
+			c.setName(n);
 			
 		}
 		if((atribute.equals("Morada"))||atribute.equals("morada")){
 			System.out.println("Insira a nova morada");
-			m=s.next();
-			c.add(1,m);
+			m=s.nextLine();
+			c.setAddress(m);
 			
 		}
 		if((atribute.equals("Telefone"))||(atribute.equals("telefone"))){
 			System.out.println("Insira um novo número de telefone:");
-			p=s.next();
-			c.add(2,p);
+			p=s.nextLine();
+			c.setMainPhone(p);
 			
 		}
 		if((atribute.equals("Telefone Alternativo"))||(atribute.equals("telefone alternativo"))){
 			System.out.println("Insira um novo número de telefone alternativo:");
-			ap=s.next();
-			c.add(3,ap);
+			ap=s.nextLine();
+			c.modEmail(ap,c.email.get(0));
 			
 		}
 		if((atribute.equals("Email"))||(atribute.equals("email"))||(atribute.equals("E-mail"))||(atribute.equals("e-mail"))){
 			System.out.println("Insira um novo e-mail:");
-			e=s.next();
-			c.add(4,e);
+			e=s.nextLine();
+			//c.add(4,e);
 			
 		}
 	}
 	
 	public void search(){
 		
-		System.out.println("Pesquisar: ");
-	
+		System.out.println("Pesquisar Por: ");
+		String searchby = s.next();
+		
+		System.out.println("Pesquisar:");
 		String search = s.next();
-		d.searchByName(search);
+		d.search(search,searchby);
+		
 	}
 
 }
