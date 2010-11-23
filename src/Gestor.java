@@ -6,13 +6,14 @@ public class Gestor {
 		
 		Menu m = new Menu();
 		Sistema sis = new Sistema();
-		Database d = new Database();
-		
-		sis.insert().toString();
-		Cliente c = d.getCliente(0);
-		String cli = c.toString();
+		Database d = sis.d;
 		
 		
+		m.mainMenu();
+		//Cliente c = sis.d.getCliente(0);
+		//String cli = c.toString();
+		
+		//System.out.println(cli);
 		
 		
 		
