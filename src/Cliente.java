@@ -23,10 +23,11 @@ public class Cliente {
 		String toPrint= "Nome Cliente: "+name+"; "+"Morada: "+address+"; "+"Nº telefone principal: "+mainPhone+"; ";
 		
 		if(phones.isEmpty()==false)
-			toPrint=toPrint+phones.toString();
+			toPrint=toPrint+"Número(s) de Telefone: "+phones.toString()+"; ";
 
 		if(email.isEmpty()==false)
-			toPrint=toPrint+email.toString();
+			toPrint=toPrint+"Endereços de E-mail: "+email.toString()+"; ";
+		
 		
 		return toPrint;
 	}
@@ -45,14 +46,14 @@ public class Cliente {
 	public void modEmail(String ein, String eout){
 		for(int a=0; a<email.size();a++){
 			if(this.email.get(a).equals(eout)==true){
-				this.email.set(a,eout);
+				this.email.set(a,ein);
 			}
 		}
 	}
 	public void modPhones(String pin, String pout){
 		for(int a=0; a<phones.size();a++){
 			if(this.phones.get(a).equals(pout)==true){
-				this.phones.set(a,pout);
+				this.phones.set(a,pin);
 			}
 		}
 	}
@@ -78,3 +79,4 @@ public class Cliente {
 		this.email.add(e);
 	}
 }
+

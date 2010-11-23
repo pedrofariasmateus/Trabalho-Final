@@ -4,10 +4,10 @@ import java.util.ArrayList;
 public class ConvertStringTest extends TestCase{
 	
 	String toConvert="Yes, I hope you die a miserable painful deathright now.";
-	ConvertString underTest=new ConvertString();
+	
 	
 	public void test1(){
-		ArrayList<String> x=underTest.Converter(toConvert);
+		ArrayList<String> x=ConvertString.Converter(toConvert);
 		String temp="";
 		int t=x.size();
 		for(int i=0; i<t-1; i++){
