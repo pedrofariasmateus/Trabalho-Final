@@ -1,9 +1,8 @@
 import junit.framework.TestCase;
-import java.util.ArrayList;
 
 public class testSearchName extends TestCase{
-	
-	public void test1(){
+	 
+	public void testPerName(){
 		Database x=new Database();
 		Cliente c1=new Cliente("João Aiveca", "Bairro Nossa Sra. da Graça", 
 				"987654321");
@@ -25,12 +24,7 @@ public class testSearchName extends TestCase{
 		x.add(c3);
 		x.add(c4);
 		
-		
-		
-		
-		System.out.print(x.search("joaiveca@hotmail.com", "email"));
 		Cliente ccheck=x.search("joaiveca@hotmail.com", "email").get(0);
-		
 		assertEquals(c1, ccheck);//só para dizer que dá
 	}
 

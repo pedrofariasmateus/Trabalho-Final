@@ -1,6 +1,6 @@
 import junit.framework.TestCase;
 import java.util.ArrayList;
-
+ 
 public class ConvertStringTest extends TestCase{
 	
 	String toConvert="Yes, I hope you die a miserable painful deathright now.";

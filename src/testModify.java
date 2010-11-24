@@ -3,7 +3,7 @@ import junit.framework.TestCase;
 import java.util.ArrayList;
 
 public class testModify extends TestCase{
-
+	
 	public void test1(){
 		
 		Database x=new Database();
@@ -37,11 +37,14 @@ public class testModify extends TestCase{
 			velha.add(i, ccheck.email.get(i));
 		
 		
-		x.modify("João Aiveca", "name", "B@hotmail.com", "jkeg@hotmail.com");
+		x.modify("João Aiveca", "name", "email", "B@hotmail.com", "A@hotmail.com");
 		
 		Cliente ccheck2=x.search("joaiveca@hotmail.com", "email").get(0);
 		ArrayList<String> nova = ccheck2.getEmail();
-		
+
+		System.out.print(nova);
+
+		System.out.print(velha);
 		boolean check=false;
 		for(int i=0; i<nova.size(); i++)
 			if(nova.get(i)!=velha.get(i))
