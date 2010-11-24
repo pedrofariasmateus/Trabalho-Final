@@ -96,7 +96,7 @@ public class Database {
 			ccheck.setAddress(nova);
 		}
 		
-		if(type.equals("phone")){
+		if(type.equals("main phone")){
 			Cliente ccheck=this.search(toSearch, type).get(0);
 			ccheck.setMainPhone(nova);
 		}

@@ -53,11 +53,11 @@ public class Sistema {
 		
 		if(info ==1){
 		
-		System.out.println("Please insert one e-mail:");
+		System.out.println("Please insert an e-mail:");
 		e=s.nextLine();
 		s.nextLine();
 		
-		System.out.println("Please insert one alternate phone number:");
+		System.out.println("Please insert an alternate phone number:");
 		ap=s.nextLine();
 		
 		
@@ -74,13 +74,14 @@ public class Sistema {
 	public void modify(){
 		String se,at,edt,cat;
 		System.out.println("Which client whose data you would like to edit?");
+		System.out.println("Insert one attribute, please: ");
 		se = s.nextLine();
 		
-		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Available Options: name, address, main phone, email, phone;");
 		System.out.println("What would you like to edit?");
 		at = s.next();
 		
-		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Available Options: name, address, main phone, email, phone;");
 		System.out.println("Attribute to edit:");
 		cat=s.nextLine();
 		s.nextLine();
