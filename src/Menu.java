@@ -7,13 +7,14 @@ public class Menu {
 	Sistema sis = new Sistema();
 	
 	
+	
 	public void mainMenu(){
 		do{
-			System.out.println("Por favor escolha uma opção: ");
-			System.out.println("1 - Inserir Cliente;");
-			System.out.println("2 - Alterar Dados de Cliente;");
-			System.out.println("3 - Procurar Cliente;");
-			System.out.println("0 - Sair do Gestor de Clientes");
+			System.out.println("Please chose one option: ");
+			System.out.println("1 - Insert Client;");
+			System.out.println("2 - Edit Client Data;");
+			System.out.println("3 - Search Client;");
+			System.out.println("0 - Exit");
 		
 			if(s.hasNextInt()){
 			option= s.nextInt();
@@ -24,25 +25,22 @@ public class Menu {
 			
 		}while(option!=0&&option!=1&&option!=2&&option!=3);
 		
-		switch(option){
-		case 0: return;
-		case 1: insertMenu();
-		case 2: modifyMenu();
-		case 3: searchMenu();
-		
+		if(option==0){
+			return;
 		}
-	}
-	
-	public void insertMenu(){
-		sis.insert();
-	}
-	
-	public void modifyMenu(){
-		//sis.modify();
-	}
-	
-	public void searchMenu(){
-		sis.search();
+		
+		if(option==1){
+			sis.insert();
+		}
+		
+		if(option==2){
+			//modifyMenu();
+		}
+		
+		if(option==3){
+			sis.search();
+		}
+		
 	}
 	
 }
