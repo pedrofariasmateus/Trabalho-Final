@@ -7,11 +7,11 @@ public class testCliente extends TestCase{
 		c.email.add("evil@hell.com");
 		c.phones.add("92345678");
 		
-		assertEquals("Marlene Oliveira",c.getNome());
-		assertEquals("Rua Desconhecida",c.getAddress());
-		assertEquals("96523423",c.getPhones());
-		assertEquals("evil@hell.com",c.email.get(0));
-		assertEquals("92345678",c.phones.get(0));
+		assertTrue(c.getNome().equals("Marlene Oliveira"));
+		assertTrue(c.getAddress().equals("Rua Desconhecida"));
+		assertTrue(c.getPhones().equals("96523423"));
+		assertTrue(c.email.get(0).equals("evil@hell.com"));
+		assertTrue(c.phones.get(0).equals("92345678"));
 	}
 	
 	public void teste2{
@@ -25,11 +25,11 @@ public class testCliente extends TestCase{
 		cl.modEmail("devilitself@hell.com","evil@hell.com");
 		cl.modPhones("92666666", "966666666");
 		
-		assertEquals("Pedro Mateus",cl.getNome());
-		assertEquals("Hell inc",cl.getAddress());
-		assertEquals("966666666",cl.getPhones());
-		assertEquals("devilitself@hell.com",cl.email.get(0));
-		assertEquals("92666666",cl.phones.get(0));
+		assertTrue(cl.getNome().equals("Pedro Mateus"));
+		assertTrue(cl.getAddress().equals("Hell inc"));
+		assertTrue(cl.getPhones().equals("966666666"));
+		assertTrue(cl.email.get(0).equals("devilitself@hell.com"));
+		assertTrue(cl.phones.get(0).equals("92666666"));
 		
 	}
 	
