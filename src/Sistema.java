@@ -12,17 +12,17 @@ public class Sistema {
 	
 		int info=0;
 		
-		System.out.println("Por favor insira um nome:");
+		System.out.println("Please insert a name:");
 		
 		n=s.nextLine();
 		
 		
-		System.out.println("Por favor insira uma morada:");
+		System.out.println("Please insert an address:");
 		
 		m=s.nextLine();
 		
 		
-		System.out.println("Por favor insira um número de telefone:");
+		System.out.println("Please insert a phone number:");
 		p=s.nextLine();
 		
 		
@@ -31,8 +31,8 @@ public class Sistema {
 		client = new Cliente(n,m,p);
 		
 		do{
-			System.out.println("Deseja inserir um e-mail e um número de telefone alternativo?");
-			System.out.println("Sim - 1; Não - 0");
+			System.out.println("Would you like to insert an e-mail and an alternate phone number?");
+			System.out.println("Yes - 1; No - 0");
 			
 			if(s.hasNextInt()){
 				
@@ -53,11 +53,11 @@ public class Sistema {
 		
 		if(info ==1){
 		
-		System.out.println("Por favor insira um e-mail:");
+		System.out.println("Please insert one e-mail:");
 		e=s.nextLine();
 		s.nextLine();
 		
-		System.out.println("Por favor insira um telefone alternativo:");
+		System.out.println("Please insert one alternate phone number:");
 		ap=s.nextLine();
 		
 		
@@ -72,20 +72,33 @@ public class Sistema {
 	}
 	
 	public void modify(){
-		String se,at;
-		System.out.println("Qual o cliente cujos dados pretende alterar?");
+		String se,at,edt,cat;
+		System.out.println("Which client whose data you would like to edit?");
 		se = s.nextLine();
 		
-		System.out.println("O que pretende alterar?");
+		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("What would you like to edit?");
 		at = s.next();
 		
-		//d.modify(se, at);
+		System.out.println("Current attribute:");
+		cat=s.nextLine();
+		s.nextLine();
+		
+		System.out.println("Please edit the attribute chosen:");
+		edt=s.nextLine();
+		
+		/************
+		 * 
+		 * final modify code here... e necessario saber como funciona o metodo modify.
+		 */
+		
+		
 	}
 	
 	public void search(){
-		
-		System.out.println("Search By: ");
 		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Search By: ");
+		
 		String searchby = s.next();
 		
 		System.out.println("Search:");
@@ -97,7 +110,7 @@ public class Sistema {
 		System.out.println(searchresults.toString());
 		}
 		else{
-			System.out.println("A sua pesquisa não retornou resultados.");
+			System.out.println("There aren't any clients corresponding to your search.");
 		}
 		
 	}

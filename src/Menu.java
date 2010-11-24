@@ -10,7 +10,7 @@ public class Menu {
 	
 	public void mainMenu(){
 		do{
-			System.out.println("Please chose one option: ");
+			System.out.println("Please select one option: ");
 			System.out.println("1 - Insert Client;");
 			System.out.println("2 - Edit Client Data;");
 			System.out.println("3 - Search Client;");
@@ -34,7 +34,7 @@ public class Menu {
 		}
 		
 		if(option==2){
-			//modifyMenu();
+			sis.modify();
 		}
 		
 		if(option==3){
