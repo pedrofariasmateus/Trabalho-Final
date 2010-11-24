@@ -75,9 +75,31 @@ public class Database {
 	}
 	
 	public void modify(String toSearch, String type, String old, String nova){
-	
+		
+		if(type.equals("email")){
 		Cliente ccheck=this.search(toSearch, type).get(0);
 		ccheck.modEmail(nova, old);
+		}
+		
+		if(type.equals("phone")){
+			Cliente ccheck=this.search(toSearch, type).get(0);
+			ccheck.modPhones(nova, old);
+		}
+		
+		if(type.equals("name")){
+			Cliente ccheck=this.search(toSearch, type).get(0);
+			ccheck.setName(nova);
+		}
+		
+		if(type.equals("address")){
+			Cliente ccheck=this.search(toSearch, type).get(0);
+			ccheck.setAddress(nova);
+		}
+		
+		if(type.equals("phone")){
+			Cliente ccheck=this.search(toSearch, type).get(0);
+			ccheck.setMainPhone(nova);
+		}
 	
 	}
 }

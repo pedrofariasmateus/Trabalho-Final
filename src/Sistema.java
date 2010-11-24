@@ -80,17 +80,15 @@ public class Sistema {
 		System.out.println("What would you like to edit?");
 		at = s.next();
 		
-		System.out.println("Current attribute:");
+		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Attribute to edit:");
 		cat=s.nextLine();
 		s.nextLine();
 		
 		System.out.println("Please edit the attribute chosen:");
 		edt=s.nextLine();
 		
-		/************
-		 * 
-		 * final modify code here... e necessario saber como funciona o metodo modify.
-		 */
+		d.modify(se,at,cat,edt);
 		
 		
 	}
