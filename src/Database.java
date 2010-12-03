@@ -112,6 +112,8 @@ public class Database {
 		//Procura o cliente que é suposto alterar
 		Cliente ccheck=this.search(toSearch, searchType).get(0);
 		
+		
+		
 		//altera o dado correspondente
 		if(toChangeType.equals("email")){
 		ccheck.modEmail(nova, old);
@@ -129,7 +131,7 @@ public class Database {
 			ccheck.setAddress(nova);
 		}
 		
-		if(toChangeType.equals("mainPhone")){
+		if(toChangeType.equals("mainphone")){
 			ccheck.setMainPhone(nova);
 		}
 	

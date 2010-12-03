@@ -30,7 +30,6 @@ public class Sistema {
 		System.out.println("Please insert a phone number:");
 		p=s.nextLine();
 		
-	
 		client = new Cliente(n,m,p); //Cliente criado com os atributos inseridos.
 		
 		do{ //Caso o utilizador o deseje, pode inserir e-mails e números de telefone alternativos.
@@ -109,26 +108,31 @@ public class Sistema {
 		String se,at,tc,edt,cat;
 		
 //Inicialmente é pedido ao utilizador o atributo pelo qual quer pesquisar o cliente cujos dados quer alterar.
-		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Available Options: name, address, mainphone, email,phone;");
 		System.out.println("Search client by?");
-		at = s.next();
+		at = s.nextLine();
+		
 		
 //De seguida o utilizador terá de inserir a(s) palavra(s) chave pelas quais irá ser feita a pesquisa.  
 		System.out.println("Which client whose data you would like to edit?");
 		se = s.nextLine();
-		s.nextLine();
+		System.out.println();
+
 		
 //Seguidamente o utilizador terá de escolher o atributo a alterar.
-		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Available Options: name, address, mainphone, email,phone;");
 		System.out.println("What would you like to edit?");
-		tc = s.next();
-
+		tc = s.nextLine();
+	
 //O utilizador poderá inserir o tipo da alteração desejada.
-		System.out.println("Available Options: name, address, phone, email;");
-		System.out.println("Attribute to edit:");
-		cat=s.nextLine();
-		s.nextLine();
-
+	
+		if(tc.equals("email")||tc.equals("phone")){
+			System.out.println("Please insert the old data:");
+			cat=s.nextLine();
+		}
+		else{
+			cat=null;
+		}
 //Finalmente o utilizador poderá inserir a alteração desejada.
 		System.out.println("Please edit the attribute chosen:");
 		edt=s.nextLine();
@@ -140,13 +144,14 @@ public class Sistema {
 	
 	public void search(){
 		//Este método permite a pesquisa de clientes.
-		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Available Options: name, address, phone, email, mainphone;");
 		System.out.println("Search By: ");
 		
 		String searchby = s.next();  //String correspondente ao tipo do atributo a pesquisar.
-		
+		s.nextLine();
 		System.out.println("Search:");
 		String search = s.next(); //Palavra(s) chave a pesquisar.
+		
 		
 		ArrayList<Cliente> searchresults = d.search(search,searchby); //ArrayList que contém os resultados da pesquisa.
 		
