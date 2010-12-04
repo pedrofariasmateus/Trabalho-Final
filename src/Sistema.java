@@ -28,7 +28,7 @@ public class Sistema {
 		
 		
 		System.out.println("Please insert a phone number:");
-		p=s.nextLine();
+		p=s.next();
 		
 		client = new Cliente(n,m,p); //Cliente criado com os atributos inseridos.
 		
@@ -71,9 +71,9 @@ public class Sistema {
 		if(opte==1){ 
 		System.out.println("Please insert an e-mail:");
 		e1=s.next();
-		//s.nextLine();
+		s.nextLine();
 		}
-		if(opte==0){
+		
 		
 		System.out.println("Please insert an alternate phone number:");
 		ap=s.next();
@@ -85,83 +85,52 @@ public class Sistema {
 		if(optap==1){
 		System.out.println("Please insert an alternate phone number:");
 		ap1=s.next();
-			}
-		/*else{
-			s.nextLine();
-			}
 		}
-		*/
+		else{
+			s.nextLine();
+		}
+		
 		client.email.add(e);
 		client.phones.add(ap);
 		client.phones.add(ap1);
 		}
 		
 		d.add(client); //O programa adiciona o cliente à base de dados.
-		s.nextLine();
-		}
+		
 		
 		
 	}
 	
 	public void modify(){
-		//Neste método é possível fazer a alteração de dados de cliente.
-		String se,at,tc,edt;
-		String cat="";
-		
-//Inicialmente é pedido ao utilizador o atributo pelo qual quer pesquisar o cliente cujos dados quer alterar.
-		System.out.println("Available Options: name, address, mainphone, email,phone;");
+		//Neste metodo e possivel fazer a alteracao de dados de cliente.
+		String se,at,tc,edt,cat;
+
+		//Inicialmente e pedido ao utilizador o atributo pelo qual quer pesquisar o cliente cujos dados quer alterar.
+		System.out.println("Available Options: name, address, phone, email;");
 		System.out.println("Search client by?");
-		at = s.nextLine();
-		
-		
-//De seguida o utilizador terá de inserir a(s) palavra(s) chave pelas quais irá ser feita a pesquisa.  
+		at = s.next();
+
+		//De seguida o utilizador tera de inserir a(s) palavra(s) chave pelas quais ira ser feita a pesquisa.
 		System.out.println("Which client whose data you would like to edit?");
 		se = s.nextLine();
-		//System.out.println();
+		s.nextLine();
 
-		
-//Seguidamente o utilizador terá de escolher o atributo a alterar.
-		System.out.println("Available Options: name, address, mainphone, email,phone;");
+		//Seguidamente o utilizador tera de escolher o atributo a alterar.
+		System.out.println("Available Options: name, address, phone, email;");
 		System.out.println("What would you like to edit?");
-		tc = s.nextLine();
-	
-//O utilizador poderá inserir o tipo da alteração desejada.
-	
-		if(tc.equals("email")){
-			System.out.println("Please insert the old data:");
-			cat=s.nextLine();
-		}
-		//else{
-			
-			//ArrayList<String>test = d.search(se, at).get(0).getEmail(); 
-			//cat=test.toString();
-			//System.out.println(test.toString());
-		//}
+		tc = s.next();
+
+		//O utilizador podera inserir o tipo da alteracao desejada.
+		System.out.println("Available Options: name, address, phone, email;");
+		System.out.println("Attribute to edit:");
+		cat=s.nextLine();
+		s.nextLine();
 		
-		if(tc.equals("phone")){
-			System.out.println("Please insert the old data:");
-			cat=s.nextLine();
-		}
-		
-		if(!(tc.equals("email"))){
-			ArrayList<String>test = d.search(se, at).get(0).getEmail(); 
-			String ce=test.toString();
-			cat=ce;
-			//System.out.println(test.toString());
-		}
-		
-		if(!(tc.equals("phone"))){
-			ArrayList<String>test = d.search(se, at).get(0).getPhones();
-			String cap = test.toString();
-			cat=cap;
-		}
-	
-		
-//Finalmente o utilizador poderá inserir a alteração desejada.
+		//Finalmente o utilizador podera inserir a alteracao desejada.
 		System.out.println("Please edit the attribute chosen:");
 		edt=s.nextLine();
-		
-		d.modify(se,at,tc,cat,edt); //O programa efectua a alteração.
+
+		d.modify(se,at,tc,cat,edt); //O programa efectua a alteracao. 
 		
 	}
 	
